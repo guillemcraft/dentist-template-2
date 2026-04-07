@@ -24,8 +24,9 @@ export default function QuoteBanner() {
     const handleScroll = () => {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
+      // Start when top hits 80% of viewport, finish when top hits 20% — all words visible before leaving
       const start = windowHeight * 0.8;
-      const end = -rect.height * 0.3;
+      const end = windowHeight * 0.2;
       const range = start - end;
       const current = start - rect.top;
       setProgress(Math.max(0, Math.min(1, current / range)));

@@ -15,13 +15,13 @@ export default function Introduction() {
     const handleScroll = () => {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      // Start revealing when section enters viewport, finish when it's about to leave
+      // Start when top of section hits 80% of viewport
+      // Finish when top of section hits 20% of viewport (all words visible before leaving)
       const start = windowHeight * 0.8;
-      const end = -rect.height * 0.3;
+      const end = windowHeight * 0.2;
       const range = start - end;
       const current = start - rect.top;
-      const p = Math.max(0, Math.min(1, current / range));
-      setProgress(p);
+      setProgress(Math.max(0, Math.min(1, current / range)));
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -39,10 +39,8 @@ export default function Introduction() {
             return (
               <span
                 key={i}
-                className="transition-colors duration-300"
-                style={{
-                  color: isRevealed ? "#000000" : "rgba(0,0,0,0.15)",
-                }}
+                className="transition-colors duration-200"
+                style={{ color: isRevealed ? "#000000" : "rgba(0,0,0,0.15)" }}
               >
                 {word}{" "}
               </span>
