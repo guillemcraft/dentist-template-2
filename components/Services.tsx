@@ -63,6 +63,7 @@ export default function Services() {
             >
               Services
             </h2>
+            <div className="mt-6 border-b border-[#26292F]/10" />
           </div>
         </AnimateIn>
 

@@ -97,29 +97,32 @@ export default function Testimonials() {
               ))}
             </div>
 
-            {/* Avatar row */}
-            <div className="flex items-center gap-3 lg:gap-4 mt-2">
-              {avatars.map((src, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  aria-label={`Select testimonial from ${testimonials[index].name}`}
-                  className={`w-12 h-12 rounded-full overflow-hidden transition-all duration-300 flex-shrink-0 ${
-                    index === activeIndex
-                      ? "ring-2 ring-[#340101]"
-                      : "opacity-50 hover:opacity-75"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt={testimonials[index].name}
-                    width={48}
-                    height={48}
-                    className="object-cover w-full h-full"
-                  />
-                </button>
-              ))}
-            </div>
+          </div>
+        </AnimateIn>
+
+        {/* Large portrait images row — below the pink card */}
+        <AnimateIn direction="up" duration={650} delay={200}>
+          <div className="flex gap-4 mt-8">
+            {avatars.map((src, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Select testimonial from ${testimonials[index].name}`}
+                className={`flex-1 relative overflow-hidden rounded-[16px] aspect-[3/4] transition-all duration-300 ${
+                  index === activeIndex
+                    ? "ring-2 ring-[#340101] ring-offset-2"
+                    : "opacity-60 hover:opacity-80"
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={testimonials[index].name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 25vw, 200px"
+                />
+              </button>
+            ))}
           </div>
         </AnimateIn>
       </div>

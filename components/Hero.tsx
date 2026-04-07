@@ -78,19 +78,19 @@ export default function Hero() {
           direction="left"
           delay={300}
         >
-          <div className="relative w-full min-h-[480px] lg:min-h-[560px]">
-            {/* Main large card — teal background is baked into the PNG */}
+          <div className="relative w-full min-h-[420px] lg:min-h-[520px]">
+            {/* Main large card — teal bg baked into the PNG */}
             <div
               className="
-                relative w-[90%] lg:w-[88%] h-[420px] lg:h-[500px]
-                rounded-3xl overflow-hidden
+                relative w-[85%] lg:w-[82%] h-[380px] lg:h-[460px]
+                rounded-[24px] overflow-hidden bg-[#4A7C6F]
               "
             >
               <Image
                 src="/images/hero/dental-implant-icon.png"
                 alt="Dental implant 3D illustration"
                 fill
-                className="object-contain"
+                className="object-contain p-6"
                 priority
               />
             </div>
@@ -98,11 +98,11 @@ export default function Hero() {
             {/* Pink overlay card — absolute bottom-right */}
             <div
               className="
-                absolute bottom-0 right-0
-                w-[62%] lg:w-[55%]
-                bg-[#FFD6F2] rounded-2xl
-                p-5 lg:p-6
-                flex flex-col gap-4
+                absolute bottom-4 right-0
+                w-[55%] lg:w-[50%]
+                bg-[#FFD6F2] rounded-[20px]
+                p-4 lg:p-5
+                flex flex-col gap-3
               "
             >
               {/* Dental Implant row */}
