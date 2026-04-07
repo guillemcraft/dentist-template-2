@@ -1,26 +1,79 @@
+/*
+DESIGN TOKEN REFERENCE (from JS injection)
+==========================================
+Font: Manrope (Google Fonts) — used for EVERYTHING
+
+Colors:
+  Dark text: #26292F (rgb(38, 41, 47))
+  Body text: rgba(38, 41, 47, 0.7)
+  Primary pink: #FFD6F2
+  Accent rose: #66475B (specialty labels, button text)
+  Testimonial bg: #FAF5F8
+  Testimonial text: #340101
+  FAQ section: dark bg with teal accent rgba(214, 255, 255, 0.3)
+  Input bg: #F5F7F8
+
+Typography:
+  H1: 80px / 600 / 80px line / -4px tracking
+  H2: 56px / 600 / 56px line / -2.8px tracking
+  H3: 40px / 600 / 44px line / -2px tracking
+  Nav links: 15px / 500 / 30px line / -0.2px tracking
+  Logo text: 20px / 600 / -0.2px tracking
+  Hero subtitle: 20px / 500 / 24px line / -1px tracking / rgba(38,41,47,0.7)
+  CTA links: 24px / 500 / -1.44px tracking
+  Service tab active: 20px / 700 / -0.4px / white
+  Service tab inactive: 16px / 400 / -0.32px / rgba(0,0,0,0.7)
+  Dentist name: 32px / 600 / -1.44px
+  Specialty: 16px / 700 / -0.48px / #66475B
+  Testimonial quote: 24px / 500 / -1px / #340101
+  Testimonial name: 16px / 500 / -0.16px / #171717
+  Testimonial role: 14px / 400 / -0.14px / rgba(0,0,0,0.6)
+  CTA heading: 56px / 700 / 67.2px / -1.44px
+  FAQ question: 20px / 400 / 26px / -0.2px
+  FAQ answer: 14px / 500 / 18.2px / rgba(255,255,255,0.75)
+  Footer links: 16px / 500 / -0.16px / white
+
+Buttons:
+  Pink: bg-[#FFD6F2] text-[#66475B] rounded-[8px] px-5 py-2.5
+
+Image Border Radii:
+  Doctor photos: 320px (pill)
+  CTA image: 16px
+  Service image: 0px
+
+Logo:
+  SVG tooth (24x24) + "Medicia" text (20px / 600 / Manrope)
+*/
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #FFD6F2;
+  --color-dark: #26292F;
+  --color-body: rgba(38, 41, 47, 0.7);
+  --color-accent: #66475B;
+  --color-testimonial-bg: #FAF5F8;
+  --font-sans: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: var(--color-dark);
+    font-family: var(--font-sans), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html { scroll-behavior: smooth; }
+
+@layer utilities {
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 214, 242, 0.4);
+  }
+  .img-zoom { transition: transform 0.5s ease; }
+  .group:hover .img-zoom { transform: scale(1.05); }
 }
