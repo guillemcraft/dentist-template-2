@@ -8,12 +8,10 @@ export default function BookAppointment() {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Left: Text Content */}
           <AnimateIn direction="right" className="w-full lg:w-[40%] flex flex-col gap-6">
-            <h2
-              className="text-[56px] font-bold leading-[67.2px] tracking-[-1.44px] text-[#26292F]"
-            >
+            <h2 className="text-[56px] font-bold leading-[67.2px] tracking-[-1.44px] text-[#26292F]">
               Book An<br />Appointment
             </h2>
-            <p className="text-[16px] font-medium text-black">
+            <p className="text-[16px] font-medium text-[#000]">
               Discover How We Illuminate and Elevate Your Smiles.
             </p>
           </AnimateIn>

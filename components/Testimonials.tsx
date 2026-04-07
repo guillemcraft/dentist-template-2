@@ -16,7 +16,7 @@ const testimonials = [
   {
     id: 2,
     quote:
-      "Outstanding care from start to finish. I felt completely at ease throughout my entire visit and the results exceeded my expectations.",
+      "Outstanding care from start to finish. The results exceeded my expectations.",
     name: "Sarah Michaels",
     role: "Designer",
     avatar: "/images/testimonials/avatar-2.png",
@@ -24,7 +24,7 @@ const testimonials = [
   {
     id: 3,
     quote:
-      "The staff made what I expected to be a stressful experience genuinely comfortable. Highly recommend this practice.",
+      "The staff made what I expected to be stressful genuinely comfortable. Highly recommend.",
     name: "Daniel Park",
     role: "Architect",
     avatar: "/images/testimonials/avatar-3.png",
@@ -32,7 +32,7 @@ const testimonials = [
   {
     id: 4,
     quote:
-      "Professional, gentle, and thorough. My whole family now comes here and we couldn't be happier with the service.",
+      "Professional, gentle, and thorough. My whole family now comes here.",
     name: "Laura Bennett",
     role: "Teacher",
     avatar: "/images/testimonials/avatar-4.png",
@@ -57,10 +57,7 @@ export default function Testimonials() {
         {/* Heading */}
         <AnimateIn direction="up" duration={600}>
           <div className="mb-10 lg:mb-14">
-            <p className="text-[11px] font-semibold tracking-[0.08em] text-[#26292F]/50 uppercase mb-1">
-              05
-            </p>
-            <h2 className="text-[36px] lg:text-[56px] font-semibold leading-[1] tracking-[-1.8px] lg:tracking-[-2.8px] text-[#26292F]">
+            <h2 className="text-[56px] font-semibold leading-[56px] tracking-[-2.8px] text-[#26292F]">
               Testimonials
             </h2>
           </div>
@@ -68,9 +65,9 @@ export default function Testimonials() {
 
         {/* Testimonial card */}
         <AnimateIn direction="up" duration={650} delay={100}>
-          <div className="bg-[#FAF5F8] rounded-[24px] px-6 py-12 lg:px-16 lg:py-16 flex flex-col items-center gap-8">
+          <div className="bg-[#FAF5F8] rounded-[24px] px-8 py-12 lg:px-16 lg:py-16 flex flex-col items-center gap-8">
             {/* Quote */}
-            <p className="text-[20px] lg:text-[24px] font-medium leading-[1.4] lg:leading-[24px] tracking-[-1px] text-[#340101] text-center max-w-[720px]">
+            <p className="text-[24px] font-medium leading-[32px] tracking-[-1px] text-[#340101] text-center max-w-[640px]">
               &ldquo;{active.quote}&rdquo;
             </p>
 
@@ -107,17 +104,17 @@ export default function Testimonials() {
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   aria-label={`Select testimonial from ${testimonials[index].name}`}
-                  className={`rounded-full overflow-hidden transition-all duration-300 flex-shrink-0 ${
+                  className={`w-12 h-12 rounded-full overflow-hidden transition-all duration-300 flex-shrink-0 ${
                     index === activeIndex
-                      ? "w-14 h-14 ring-2 ring-[#340101] ring-offset-2 ring-offset-[#FAF5F8]"
-                      : "w-12 h-12 opacity-50 hover:opacity-75"
+                      ? "ring-2 ring-[#340101]"
+                      : "opacity-50 hover:opacity-75"
                   }`}
                 >
                   <Image
                     src={src}
                     alt={testimonials[index].name}
-                    width={56}
-                    height={56}
+                    width={48}
+                    height={48}
                     className="object-cover w-full h-full"
                   />
                 </button>

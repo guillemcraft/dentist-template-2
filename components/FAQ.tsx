@@ -5,12 +5,14 @@ import AnimateIn from "@/components/AnimateIn";
 
 const faqs = [
   {
-    question: "How is a root canal treatment performed, and how long will it take?",
+    question:
+      "How is a root canal treatment performed, and how long will it take?",
     answer:
       "Root canal treatment involves cleaning and filling the inside of an infected or inflamed tooth. The treatment duration is typically completed in one or a few sessions. However, it may vary depending on the complexity of the case.",
   },
   {
-    question: "How can I schedule an emergency appointment for a painful dental issue?",
+    question:
+      "How can I schedule an emergency appointment for a painful dental issue?",
     answer:
       "Contact our clinic directly by phone or through our online booking form. We reserve slots for urgent cases and aim to see emergency patients the same day whenever possible.",
   },
@@ -30,10 +32,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section id="faq" className="bg-[rgba(214,255,255,0.3)]">
+    <section id="faq" style={{ backgroundColor: "rgba(214,255,255,0.3)" }}>
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8 py-20 lg:py-28">
         <AnimateIn>
-          <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-[#26292F] mb-10 lg:mb-14">
+          <h2
+            className="font-semibold tracking-tight text-[#26292F] mb-10 lg:mb-14 italic"
+            style={{ fontSize: "48px", lineHeight: 1.1 }}
+          >
             FAQ
           </h2>
         </AnimateIn>
@@ -43,7 +48,7 @@ export default function FAQ() {
             const isOpen = openIndex === index;
 
             return (
-              <AnimateIn key={index} delay={index * 60}>
+              <AnimateIn key={index} delay={index * 80}>
                 <div
                   className={`rounded-[16px] overflow-hidden transition-colors duration-300 ${
                     isOpen ? "bg-[#26292F]" : "bg-white/70"
@@ -51,7 +56,9 @@ export default function FAQ() {
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                    className="w-full flex items-center justify-between gap-4 px-8 py-8 text-left"
+                    className={`w-full flex items-center justify-between gap-4 px-8 text-left ${
+                      isOpen ? "py-8" : "py-6"
+                    }`}
                     aria-expanded={isOpen}
                   >
                     <span
@@ -66,7 +73,7 @@ export default function FAQ() {
                       className={`flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full border transition-all duration-300 ${
                         isOpen
                           ? "border-white/40 text-white rotate-45"
-                          : "border-[#26292F]/30 text-[#26292F]"
+                          : "border-[#26292F]/30 text-[#26292F]/50"
                       }`}
                     >
                       <svg
@@ -93,7 +100,7 @@ export default function FAQ() {
                   >
                     <div className="overflow-hidden">
                       <p
-                        className="px-8 pb-8 text-[14px] font-medium leading-[18.2px]"
+                        className="px-8 pb-8 mt-4 text-[14px] font-medium leading-[18.2px]"
                         style={{ color: "rgba(255,255,255,0.75)" }}
                       >
                         {faq.answer}

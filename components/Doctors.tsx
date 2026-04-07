@@ -34,7 +34,7 @@ export default function Doctors() {
           </h2>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {doctors.map((doctor, i) => (
             <AnimateIn key={doctor.name} direction="up" delay={i * 150}>
               <div className="flex flex-col gap-4">
@@ -45,12 +45,12 @@ export default function Doctors() {
                     alt={doctor.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
 
-                {/* Name and specialty */}
-                <div className="flex flex-col gap-1 px-1">
+                {/* Name and specialty on the same line */}
+                <div className="flex items-center justify-between px-1">
                   <p className="text-[32px] font-semibold leading-[32px] tracking-[-1.44px] text-[#26292F]">
                     {doctor.name}
                   </p>

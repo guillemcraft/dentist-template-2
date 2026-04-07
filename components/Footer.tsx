@@ -7,13 +7,27 @@ export default function Footer() {
       <section id="location" className="bg-white py-16">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
           <AnimateIn>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-              <h2 className="text-[56px] font-semibold leading-[56px] tracking-[-2.8px] text-[#26292F]">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <h2
+                className="font-semibold text-[#26292F]"
+                style={{
+                  fontSize: "56px",
+                  lineHeight: "56px",
+                  letterSpacing: "-2.8px",
+                }}
+              >
                 Based In
                 <br />
                 London
               </h2>
-              <p className="text-[32px] font-semibold leading-[32px] tracking-[-1.44px] text-[#26292F] md:text-right">
+              <p
+                className="font-semibold text-[#26292F] lg:text-right"
+                style={{
+                  fontSize: "32px",
+                  lineHeight: "32px",
+                  letterSpacing: "-1.44px",
+                }}
+              >
                 Flat E, 361 High Road,
                 <br />
                 London, England,
@@ -28,7 +42,7 @@ export default function Footer() {
       {/* Footer */}
       <footer className="bg-[#26292F] py-8">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
               <svg
@@ -44,43 +58,32 @@ export default function Footer() {
                   fill="white"
                 />
               </svg>
-              <span className="text-white text-[16px] font-medium tracking-[-0.16px]">
+              <span
+                className="text-white font-medium"
+                style={{ fontSize: "16px" }}
+              >
                 Medicia
               </span>
             </a>
 
             {/* Nav Links */}
             <nav className="flex flex-wrap gap-x-6 gap-y-3">
-              <a
-                href="#about"
-                className="text-[16px] font-medium tracking-[-0.16px] text-white hover:opacity-70 transition-opacity"
-              >
-                About Us
-              </a>
-              <a
-                href="#doctors"
-                className="text-[16px] font-medium tracking-[-0.16px] text-white hover:opacity-70 transition-opacity"
-              >
-                Doctors
-              </a>
-              <a
-                href="#appointment"
-                className="text-[16px] font-medium tracking-[-0.16px] text-white hover:opacity-70 transition-opacity"
-              >
-                Book An Appointment
-              </a>
-              <a
-                href="#services"
-                className="text-[16px] font-medium tracking-[-0.16px] text-white hover:opacity-70 transition-opacity"
-              >
-                Services
-              </a>
-              <a
-                href="#faq"
-                className="text-[16px] font-medium tracking-[-0.16px] text-white hover:opacity-70 transition-opacity"
-              >
-                FAQ
-              </a>
+              {[
+                { label: "About Us", href: "#about" },
+                { label: "Doctors", href: "#doctors" },
+                { label: "Book An Appointment", href: "#appointment" },
+                { label: "Services", href: "#services" },
+                { label: "FAQ", href: "#faq" },
+              ].map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="text-white font-medium hover:opacity-70 transition-opacity"
+                  style={{ fontSize: "16px", letterSpacing: "-0.16px" }}
+                >
+                  {label}
+                </a>
+              ))}
             </nav>
           </div>
         </div>

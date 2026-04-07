@@ -118,11 +118,15 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Sticky navbar */}
       <nav
         className="sticky top-0 z-40 w-full bg-white"
         style={{ height: "64px" }}
       >
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
+        <div
+          className="mx-auto flex h-full items-center justify-between px-6"
+          style={{ maxWidth: "1280px" }}
+        >
           {/* Logo */}
           <Link
             href="/"
@@ -135,16 +139,20 @@ export default function Navbar() {
                 fontSize: "20px",
                 fontWeight: 600,
                 letterSpacing: "-0.2px",
-                color: "#26292F",
-                fontFamily: "var(--font-sans)",
+                color: "#000000",
+                fontFamily: "var(--font-manrope, Manrope, sans-serif)",
               }}
             >
               Medicia
             </span>
           </Link>
 
-          {/* Desktop nav links */}
-          <ul className="hidden items-center gap-7 lg:flex" role="list">
+          {/* Desktop nav links — centered */}
+          <ul
+            className="hidden items-center lg:flex"
+            role="list"
+            style={{ gap: "28px", listStyle: "none", margin: 0, padding: 0 }}
+          >
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -154,8 +162,9 @@ export default function Navbar() {
                     fontWeight: 500,
                     lineHeight: "30px",
                     letterSpacing: "-0.2px",
-                    color: "#26292F",
-                    fontFamily: "var(--font-sans)",
+                    color: "#000000",
+                    fontFamily: "var(--font-manrope, Manrope, sans-serif)",
+                    textDecoration: "none",
                   }}
                   className="transition-opacity hover:opacity-70"
                 >
@@ -165,7 +174,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA button */}
           <div className="hidden lg:block">
             <Link
               href="#appointment"
@@ -176,11 +185,13 @@ export default function Navbar() {
                 padding: "10px 20px",
                 fontSize: "15px",
                 fontWeight: 500,
-                fontFamily: "var(--font-sans)",
+                lineHeight: "30px",
+                letterSpacing: "-0.2px",
+                fontFamily: "var(--font-manrope, Manrope, sans-serif)",
                 display: "inline-block",
-                transition: "opacity 0.2s",
+                textDecoration: "none",
               }}
-              className="hover:opacity-80"
+              className="transition-opacity hover:opacity-80"
             >
               Appointment
             </Link>
@@ -198,7 +209,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile full-screen overlay */}
+      {/* Mobile full-screen overlay — sibling of nav, outside sticky context */}
       <div
         aria-hidden={!menuOpen}
         style={{
@@ -217,7 +228,7 @@ export default function Navbar() {
           transition: "opacity 0.25s ease",
         }}
       >
-        {/* Overlay header */}
+        {/* Overlay header row */}
         <div
           style={{
             height: "64px",
@@ -234,8 +245,8 @@ export default function Navbar() {
                 fontSize: "20px",
                 fontWeight: 600,
                 letterSpacing: "-0.2px",
-                color: "#26292F",
-                fontFamily: "var(--font-sans)",
+                color: "#000000",
+                fontFamily: "var(--font-manrope, Manrope, sans-serif)",
               }}
             >
               Medicia
@@ -250,7 +261,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile links */}
+        {/* Mobile nav links */}
         <ul
           role="list"
           style={{
@@ -275,7 +286,7 @@ export default function Navbar() {
                     fontWeight: 600,
                     letterSpacing: "-0.3px",
                     color: "#26292F",
-                    fontFamily: "var(--font-sans)",
+                    fontFamily: "var(--font-manrope, Manrope, sans-serif)",
                     background: "none",
                     border: "none",
                     padding: "12px 0",
@@ -284,7 +295,7 @@ export default function Navbar() {
                     width: "100%",
                     opacity: menuOpen ? 1 : 0,
                     transform: menuOpen ? "translateY(0)" : "translateY(16px)",
-                    transition: `opacity 0.3s ease, transform 0.3s ease`,
+                    transition: "opacity 0.3s ease, transform 0.3s ease",
                     transitionDelay: `${150 + i * 75}ms`,
                   }}
                 >
@@ -314,7 +325,7 @@ export default function Navbar() {
               padding: "12px 24px",
               fontSize: "15px",
               fontWeight: 500,
-              fontFamily: "var(--font-sans)",
+              fontFamily: "var(--font-manrope, Manrope, sans-serif)",
               border: "none",
               cursor: "pointer",
               width: "100%",
