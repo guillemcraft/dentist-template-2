@@ -103,40 +103,36 @@ export default function Hero() {
             {/* Two service cards side by side at bottom */}
             <div className="flex gap-4 mt-6">
               {/* Dental Implant card — green/mint */}
-              <div className="flex-1 bg-[#C8F5E3] rounded-[16px] p-5 flex flex-col justify-between min-h-[160px]">
-                <StarIcon className="text-[#26292F]/40 w-5 h-5" />
-                <div className="flex items-end justify-between gap-2">
+              <div className="flex-1 bg-[#C8F5E3] rounded-[16px] overflow-hidden relative min-h-[180px]">
+                <Image
+                  src="/images/hero/dental-implant-icon.png"
+                  alt="Dental implant consultation"
+                  fill
+                  className="object-cover opacity-30"
+                  sizes="(max-width: 1024px) 50vw, 250px"
+                />
+                <div className="relative z-10 p-5 flex flex-col justify-between h-full">
+                  <StarIcon className="text-[#26292F]/40 w-5 h-5" />
                   <p className="text-[24px] lg:text-[28px] font-semibold leading-[1.1] tracking-[-1px] text-[#26292F]">
                     Dental<br />Implant
                   </p>
-                  <div className="relative w-14 h-16 flex-shrink-0">
-                    <Image
-                      src="/images/hero/dental-implant-icon.png"
-                      alt="Dental implant"
-                      fill
-                      className="object-contain"
-                      sizes="56px"
-                    />
-                  </div>
                 </div>
               </div>
 
               {/* Aesthetic Care card — pink */}
-              <div className="flex-1 bg-[#FFD6F2] rounded-[16px] p-5 flex flex-col justify-between min-h-[160px]">
-                <StarIcon className="text-[#26292F]/40 w-5 h-5" />
-                <div className="flex items-end justify-between gap-2">
+              <div className="flex-1 bg-[#FFD6F2] rounded-[16px] overflow-hidden relative min-h-[180px]">
+                <Image
+                  src="/images/hero/aesthetic-care-icon.png"
+                  alt="Beautiful smile"
+                  fill
+                  className="object-cover opacity-30"
+                  sizes="(max-width: 1024px) 50vw, 250px"
+                />
+                <div className="relative z-10 p-5 flex flex-col justify-between h-full">
+                  <StarIcon className="text-[#26292F]/40 w-5 h-5" />
                   <p className="text-[24px] lg:text-[28px] font-semibold leading-[1.1] tracking-[-1px] text-[#26292F]">
                     Aesthetic<br />Care
                   </p>
-                  <div className="relative w-16 h-16 flex-shrink-0">
-                    <Image
-                      src="/images/hero/aesthetic-care-icon.png"
-                      alt="Aesthetic care"
-                      fill
-                      className="object-contain"
-                      sizes="64px"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
