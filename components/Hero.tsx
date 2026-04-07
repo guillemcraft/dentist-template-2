@@ -56,17 +56,17 @@ export default function Hero() {
           {/* RIGHT: Content */}
           <AnimateIn className="lg:w-[50%] flex flex-col justify-between" direction="left" delay={200}>
             <div className="flex flex-col gap-6">
+              {/* Divider line */}
+              <div className="border-t border-[#26292F]/10" />
+
               {/* Decorative arrow icon top-right */}
               <div className="flex justify-end">
-                <div className="w-10 h-10 rounded-full border border-[#26292F]/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full border border-dashed border-[#26292F]/30 flex items-center justify-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M12 4L4 12M4 4V12H12" stroke="#26292F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
               </div>
-
-              {/* Divider line */}
-              <div className="border-t border-[#26292F]/10" />
 
               {/* Subtitle */}
               <p
@@ -109,7 +109,7 @@ export default function Hero() {
                   <p className="text-[24px] lg:text-[28px] font-semibold leading-[1.1] tracking-[-1px] text-[#26292F]">
                     Dental<br />Implant
                   </p>
-                  <div className="relative w-14 h-20 flex-shrink-0">
+                  <div className="relative w-14 h-16 flex-shrink-0">
                     <Image
                       src="/images/hero/dental-implant-icon.png"
                       alt="Dental implant"
@@ -128,7 +128,7 @@ export default function Hero() {
                   <p className="text-[24px] lg:text-[28px] font-semibold leading-[1.1] tracking-[-1px] text-[#26292F]">
                     Aesthetic<br />Care
                   </p>
-                  <div className="relative w-16 h-12 flex-shrink-0">
+                  <div className="relative w-16 h-16 flex-shrink-0">
                     <Image
                       src="/images/hero/aesthetic-care-icon.png"
                       alt="Aesthetic care"
